@@ -1,0 +1,104 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 4 (Swiss & High-Contrast)",
+  "typography": {
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+    "headings": {
+      "font_family": "'Outfit', sans-serif",
+      "weights": ["light", "regular", "semibold", "bold"],
+      "classes": "font-sans tracking-tighter",
+      "h1": "text-4xl sm:text-5xl lg:text-6xl leading-tight",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl",
+      "h3": "text-xl sm:text-2xl"
+    },
+    "body": {
+      "font_family": "'Manrope', sans-serif",
+      "weights": ["regular", "medium", "semibold"],
+      "classes": "font-sans tracking-normal leading-relaxed text-base"
+    },
+    "mono": {
+      "font_family": "'JetBrains Mono', monospace",
+      "classes": "font-mono text-sm tracking-tight uppercase"
+    }
+  },
+  "colors": {
+    "background": "#08090A",
+    "surface": "#121417",
+    "surface_hover": "#1A1C20",
+    "primary": "#0052FF",
+    "primary_hover": "#0040CC",
+    "accent": "#FFD700",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#8F95A3",
+    "border": "#22252A",
+    "success": "#00E676",
+    "danger": "#FF3B30",
+    "gradient_hero": "bg-gradient-to-br from-[#08090A] via-[#0D1017] to-[#00144A]"
+  },
+  "layout_and_spacing": {
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "section_gap": "py-24 md:py-32",
+    "card_padding": "p-6 md:p-8",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+    "radius": "rounded-none md:rounded-sm"
+  },
+  "surface_strategies": {
+    "header": "backdrop-blur-xl bg-[#08090A]/80 border-b border-[#22252A] sticky top-0 z-50",
+    "cards": "bg-[#121417] border border-[#22252A] shadow-none transition-all duration-300",
+    "glass_panels": "bg-[#121417]/60 backdrop-blur-xl border border-white/10"
+  },
+  "components": {
+    "buttons": "h-12 px-6 py-3 font-medium uppercase tracking-widest text-xs flex items-center justify-center transition-all duration-300",
+    "primary_button": "bg-[#0052FF] text-white hover:bg-[#0040CC] shadow-[0_0_20px_rgba(0,82,255,0.3)] hover:shadow-[0_0_30px_rgba(0,82,255,0.5)]",
+    "secondary_button": "bg-transparent border border-[#22252A] text-white hover:bg-[#121417] hover:border-[#404552]",
+    "inputs": "h-12 bg-[#08090A] border border-[#22252A] text-white focus:border-[#0052FF] focus:ring-1 focus:ring-[#0052FF] rounded-none px-4",
+    "badges": "px-2.5 py-0.5 text-xs font-mono uppercase border border-[#22252A] bg-[#121417] text-[#8F95A3]",
+    "shadcn_overrides": "Do not use standard card shadows. Flatten cards. Use sharp edges or max 4px radius. Override default neutral borders with #22252A."
+  },
+  "motion_and_interactions": {
+    "hover_state": "hover:text-white transition-colors duration-200",
+    "focus_state": "focus:outline-none focus:ring-2 focus:ring-[#0052FF] focus:ring-offset-2 focus:ring-offset-[#08090A]",
+    "entrance_animation": "motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-4 motion-safe:duration-700"
+  },
+  "icons": {
+    "library": "@phosphor-icons/react",
+    "style": "duotone for marketing landing page sections, regular weight for data-dense dashboards."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "category": "hero_background",
+        "url": "https://images.pexels.com/photos/30547584/pexels-photo-30547584.jpeg",
+        "description": "Abstract futuristic cyber landscape, used for the main landing page hero section. Add an overlay of bg-black/60 to ensure text readability."
+      },
+      {
+        "category": "ai_valuation_background",
+        "url": "https://images.unsplash.com/photo-1762278804941-27ff5cba5a2e",
+        "description": "Abstract flowing lines, used to add visual interest behind the AI Domain Valuation tool."
+      },
+      {
+        "category": "pricing_or_about",
+        "url": "https://images.unsplash.com/photo-1775660922989-f0c624413269",
+        "description": "Minimalist dark architecture, used for Pricing Plans or About section to convey premium authority."
+      }
+    ],
+    "logos_instructions": "Use 'react-icons/fa' or 'react-icons/si' for all payment and crypto logos (e.g., SiStripe, FaBitcoin, SiTether, SiGodaddy). Do not use image placeholders for logos."
+  },
+  "accessibility_and_testing": {
+    "contrast_ratio": "Ensure APCA contrast is met. Body text #8F95A3 against #08090A is legible. Hover states must explicitly define text colors.",
+    "data_testid_rules": "All interactive elements (buttons, inputs, domain listings, tabs, AI valuation triggers) MUST use data-testid in kebab-case."
+  },
+  "instructions_to_main_agent": [
+    "CRITICAL: Write components in .js/.jsx. Do NOT output .tsx files.",
+    "Always run `yarn add @phosphor-icons/react react-icons framer-motion clsx tailwind-merge lucide-react` before starting.",
+    "Include the Google Fonts import link for Outfit, Manrope, and JetBrains Mono in your index.html or root CSS.",
+    "For the domain marketplace grid, use a dense 'Bento Box' or 'Control Room' grid layout. Display TLDs (.com, .ai) in sharp monochromatic badges.",
+    "AI Valuation Component: Must use the 'Tracing Beam' surface strategy (animated border) to emphasize the AI brain processing.",
+    "Use glassmorphism (bg-[#08090A]/80 backdrop-blur-xl border-b border-[#22252A]) for the sticky navigation header.",
+    "Dashboard: Strip out standard 'Vercel-like' soft shadows. Use the 'Grid Borders' strategy (border-collapse, border-r border-b on items) to create a 'Command Center' feel.",
+    "Wallet & Crypto: Color-code currencies subtly. USD (Green hint), BTC (Orange hint), USDT (Teal hint) but keeping the overall UI dark, rigid, and monochrome.",
+    "Do not use generic font families like Inter for headings. Use 'Outfit'.",
+    "Never use pure black (#000000) or white (#FFFFFF) backgrounds. Base background is #08090A.",
+    "No placeholder images. Use provided media URLs in the media object."
+  ]
+}
