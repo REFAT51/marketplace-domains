@@ -1,9 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Domain Marketplace</title>
+  <meta charset="UTF-8" />
+  <title>Domain Marketplace</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 100px;
+    }
+    input {
+      padding: 10px;
+      width: 250px;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>🔥 الموقع شغال</h1>
+
+  <h1>Domain Search</h1>
+
+  <input type="text" id="domainInput" placeholder="Enter domain (e.g. example.com)" />
+  <button onclick="searchDomain()">Search</button>
+
+  <div id="result"></div>
+
+  <script>
+    async function searchDomain() {
+      const domain = document.getElementById("domainInput").value;
+      const resultDiv = document.getElementById("result");
+
+      if (!domain) {
+        resultDiv.innerHTML = "Please enter a domain";
+        return;
+      }
+
+      resultDiv.innerHTML = "Checking...";
+
+      try {
+        const res = await fetch(`/api/domain-search?domain=${domain}`);
+        const data = await res.json();
+
+        if (data.error) {
+          resultDiv.innerHTML = "Error: " + data.error;
+          return;
+        }
+
+        if (data.available) {
+          resultDiv.innerHTML = `
+            ✅ Domain is available <br>
+            Price: ${data.price || "N/A"} ${data.currency}
+          `;
+        } else {
+          resultDiv.innerHTML = "❌ Domain is not available";
+        }
+
+      } catch (err) {
+        resultDiv.innerHTML = "Something went wrong";
+      }
+    }
+  </script>
+
 </body>
 </html>
