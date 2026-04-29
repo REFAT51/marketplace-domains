@@ -138,10 +138,10 @@ const DomainsTab = ({ pending, reload }) => {
           <div className="font-mono">${d.price_usd}</div>
           <div><span className="tld-badge">{d.category}</span> · score {d.ai_score}</div>
           <div className="flex gap-2 justify-end">
-            <button onClick={() => act(d.id, "approve")} className="h-9 px-4 bg-[#00E676] text-black font-mono text-xs uppercase tracking-widest flex items-center gap-1.5" data-testid={`approve-${d.name}`}>
+            <button onClick={() => act(d.id, "approve")} className="h-9 px-4 bg-[#00E676] text-black font-mono text-xs uppercase tracking-widest flex items-center gap-1.5" data-testid={`approve-${d.id}`}>
               <Check size={14} weight="bold" /> Approve
             </button>
-            <button onClick={() => act(d.id, "reject")} className="h-9 px-4 border border-[#FF3B30] text-[#FF3B30] font-mono text-xs uppercase tracking-widest flex items-center gap-1.5" data-testid={`reject-${d.name}`}>
+            <button onClick={() => act(d.id, "reject")} className="h-9 px-4 border border-[#FF3B30] text-[#FF3B30] font-mono text-xs uppercase tracking-widest flex items-center gap-1.5" data-testid={`reject-${d.id}`}>
               <X size={14} weight="bold" /> Reject
             </button>
           </div>
